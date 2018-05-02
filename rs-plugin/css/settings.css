@@ -554,6 +554,7 @@ text-shadow:none;
 .tp-caption a {
 color:#ff7302;
 text-shadow:none;
+transition:all 0.2s ease-out;
 -webkit-transition:all 0.2s ease-out;
 -moz-transition:all 0.2s ease-out;
 -o-transition:all 0.2s ease-out;
@@ -1267,14 +1268,14 @@ border-style:none;
 
 	@media only screen and (min-width: 480px) and (max-width: 767px) {
 		.tp-simpleresponsive  .button	{	padding:4px 8px 3px; line-height:25px !important; font-size:11px !important;font-weight:normal;	}
-		.tp-simpleresponsive  a.button { -webkit-transition: none; -moz-transition: none; -o-transition: none; -ms-transition: none;	 }
+		.tp-simpleresponsive  a.button { transition: none;  -webkit-transition: none; -moz-transition: none; -o-transition: none; -ms-transition: none;	 }
 
 
 	}
 
     @media only screen and (min-width: 0px) and (max-width: 479px) {
 		.tp-simpleresponsive  .button	{	padding:2px 5px 2px; line-height:20px !important; font-size:10px !important;}
-		.tp-simpleresponsive  a.button { -webkit-transition: none; -moz-transition: none; -o-transition: none; -ms-transition: none;	 }
+		.tp-simpleresponsive  a.button { transition: none; -webkit-transition: none; -moz-transition: none; -o-transition: none; -ms-transition: none;	 }
 	}
 
 
@@ -1381,6 +1382,7 @@ border-style:none;
 
 		margin-left:auto;
 		margin-right:auto;
+		user-select: none;
 		-moz-user-select: none;
         -khtml-user-select: none;
         -webkit-user-select: none;
@@ -1438,13 +1440,16 @@ border-style:none;
 
 
 .tp-bullets									{	z-index:1000; position:absolute;
+												filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 												-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 												-moz-opacity: 1;
 												-khtml-opacity: 1;
 												opacity: 1;
-												-webkit-transition: opacity 0.2s ease-out; -moz-transition: opacity 0.2s ease-out; -o-transition: opacity 0.2s ease-out; -ms-transition: opacity 0.2s ease-out;-webkit-transform: translateZ(5px);
+												transition: opacity 0.2s ease-out;
+												-webkit-transition: opacity 0.2s ease-out; -moz-transition: opacity 0.2s ease-out; -o-transition: opacity 0.2s ease-out; -ms-transition: opacity 0.2s ease-out;transform: translateZ(5px); -webkit-transform: translateZ(5px);
 											}
 .tp-bullets.hidebullets					{
+	filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 												-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 												-moz-opacity: 0;
 												-khtml-opacity: 0;
@@ -1501,19 +1506,26 @@ border-style:none;
 /*************************************
 	-	TP ARROWS 	-
 **************************************/
-.tparrows												{	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+.tparrows												{	
+	filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 															-moz-opacity: 1;
 															-khtml-opacity: 1;
 															opacity: 1;
+															transition: opacity 0.2s ease-out;
 															-webkit-transition: opacity 0.2s ease-out; -moz-transition: opacity 0.2s ease-out; -o-transition: opacity 0.2s ease-out; -ms-transition: opacity 0.2s ease-out;			
+															transform: translateZ(5000px);
 															-webkit-transform: translateZ(5000px);
+															transform-style: flat;
 															-webkit-transform-style: flat;
+															backface-visibility: hidden;
 															-webkit-backface-visibility: hidden;
 															z-index:600;
 															position: relative;
 
 														}
 .tparrows.hidearrows									{
+	filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 															-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 															-moz-opacity: 0;
 															-khtml-opacity: 0;
@@ -1594,18 +1606,20 @@ border-style:none;
 
 .tp-bullets.tp-thumbs .bullet				{   width:100px; height:50px; 			/* THE DIMENSION OF A SINGLE THUMB */
 												cursor:pointer; overflow:hidden;background:none;margin:0;float:left;
+												filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 												-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 												/*filter: alpha(opacity=50);	*/
 												-moz-opacity: 0.5;
 												-khtml-opacity: 0.5;
 												opacity: 0.5;
-
+												transition: all 0.2s ease-out;
 												-webkit-transition: all 0.2s ease-out; -moz-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out;
 											}
 
 
 .tp-bullets.tp-thumbs .bullet:hover,
-.tp-bullets.tp-thumbs .bullet.selected		{ 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+.tp-bullets.tp-thumbs .bullet.selected		{ filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 
 												-moz-opacity: 1;
 												-khtml-opacity: 1;
@@ -1685,6 +1699,7 @@ padding: 0px;
 ***********************************************/
 
  .tp-simpleresponsive img {
+	user-select: none;
 		-moz-user-select: none;
         -khtml-user-select: none;
         -webkit-user-select: none;
@@ -1702,7 +1717,7 @@ padding: 0px;
 }
 
 .tp-simpleresponsive >ul >li{
-	list-stye:none;
+	list-style-type:none;
 	position:absolute;
 	visibility:hidden;
 }
@@ -1924,8 +1939,8 @@ padding: 0px;
 
 
 .tp-transparentimg {	content:"url(../assets/transparent.png)"}
-.tp-3d				{	-webkit-transform-style: preserve-3d;
-						 -webkit-transform-origin: 50% 50%;
+.tp-3d				{	transform-style: preserve-3d;-webkit-transform-style: preserve-3d;
+	transform-origin: 50% 50%; -webkit-transform-origin: 50% 50%;
 					}
 
 
@@ -1963,7 +1978,7 @@ zoom: 1;
   font-family: "revicons";
   font-style: normal;
   font-weight: normal;
-  speak: none;
+
 
   display: inline-block;
   text-decoration: inherit;
