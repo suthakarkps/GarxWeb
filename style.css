@@ -123,7 +123,7 @@
 	ul.nav.navbar-nav.navbar-right { margin-top: 4px}
 	
 	.feature-img img {
-		padding:100px 0;
+		padding:10px 0 50px;
 		margin:auto;
 	}
 	.features-widget {
@@ -973,10 +973,6 @@
 		background-color: #FFF;
 	}
 	
-	.about-box img {
-		padding-bottom:15px;
-		
-		}
 	.about-box {
 		margin:40px 0;
 		color:#999999;
@@ -1789,13 +1785,23 @@
 		padding-right:10px
 	}
 	.infobox .title {
-		font-size:13px;
-		font-weight:bold;
-		margin-top:0;
-		margin-bottom:0;
-		text-transform:uppercase;
-		padding-bottom:5px;
+		font-size: 16px;
+		font-weight: bold;
+		margin-top: 0;
+		margin-bottom: 0;
+		text-transform: uppercase;
+		padding-bottom: 5px;
+		color: #df2d2d;
+		text-align: center;
 	}
+	.infobox h3{    font-size: 14px;
+		font-weight: bold;
+		margin-top: 0;
+		margin-bottom: 0;
+		text-transform: uppercase;
+		padding-bottom: 5px;
+		color: #df2d2d;
+		text-align: center;}
 	.infobox .title a {
 		font-weight:bold;
 	}
@@ -2059,20 +2065,124 @@
 		background-color:#fff; /* change if the mask should have another color then white */
 		z-index:999999; /* makes sure it stays on top */
 	}
-	.loader {
+	/* .loader {
 		width:200px;
 		text-indent:-99999;
 		height:200px;
 		font-size:0;
 		position:absolute;
-		left:50%; /* centers the loading animation horizontally one the screen */
-		top:50%; /* centers the loading animation vertically one the screen */
-		background-image:url(images/loading.gif); /* path to your loading animation */
+		left:50%; 
+		top:50%;
+		background-image:url(images/loading.gif); 
 		background-repeat:no-repeat;
 		background-position:center;
-		margin:-100px 0 0 -100px; /* is width and height divided by two */
-	}
+		margin:-100px 0 0 -100px;
+	} */
+
 	
+.ball {
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+	background-image:url(images/logo-icon.png); 
+  }
+  
+  .ball-shadow {
+	background: radial-gradient(50% 50%, #df2d2d8c 0%, #fff 100%);
+	height: 50px;
+	width: 100px;
+  }
+  
+  .bouncy-castle {
+	height: 100%;
+	left: 50%;
+	top:-50%;
+	margin-top: 50px;
+	position: absolute;
+	
+  }
+  
+  .bouncy-castle .ball-shadow {
+	-webkit-animation-direction: alternate;
+	-webkit-animation-duration: .7s;
+	-webkit-animation-name: grow;
+	-webkit-animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-duration: .7s;
+	animation-name: grow;
+	animation-iteration-count: infinite;
+	bottom: 0;
+	position: absolute;
+	margin-left: -50px;
+  }
+  
+  .bouncy-castle .ball {
+	-webkit-animation-direction: alternate;
+	-webkit-animation-duration: .7s;
+	-webkit-animation-name: bounce;
+	-webkit-animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-duration: .7s;
+	animation-name: bounce;
+	animation-iteration-count: infinite;
+	margin-left: -50px;
+	position: absolute;
+  }
+  
+  @-webkit-keyframes grow {
+	from {
+	  bottom: 0;
+	  margin-left: -100px;
+	  height: 50px;
+	  opacity: 1;
+	  width: 200px;
+	}
+  
+	to {
+	  bottom: -15px;
+	  margin-left: -150px;
+	  height: 80px;
+	  opacity: 0.4;
+	  width: 300px;
+	}
+  }
+  
+  @keyframes grow {
+	from {
+	  bottom: 0;
+	  margin-left: -100px;
+	  height: 50px;
+	  width: 200px;
+	}
+  
+	to {
+	  bottom: 20px;
+	  margin-left: 0;
+	  height: 10px;
+	  width: 15px;
+	}
+  }
+  
+  @-webkit-keyframes bounce {
+	from {
+	  bottom: 20px;
+	}
+  
+	to {
+	  bottom: 20%;
+	}
+  }
+  
+  @keyframes bounce {
+	from {
+	  bottom: 20px;
+	}
+  
+	to {
+	  bottom: 20%;
+	}
+  }
+  
 	
 /*	################################################################
 	16. COLOR SCHEME
@@ -2549,6 +2659,7 @@
 		padding-bottom:0;
 		font-size:18px;
 		margin-bottom:5px;
+		color: #df2d2d;
 	}
 	.blog-carousel-header h1 {
 		padding-bottom:0;
